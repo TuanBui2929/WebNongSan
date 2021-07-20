@@ -1,0 +1,124 @@
+
+/*---------------------------------------------thongtin-----------------*/
+.thongtin
+{
+    padding-top: 20px;
+    height: 300px;
+    width: 900px;
+    margin: 0 auto;
+    
+}
+.thongtin .anh
+{
+    width: 350px;
+    float: left;
+}
+/* */
+.thongtin .anh .img
+{
+    width: 350px;
+    height: 250px;
+}
+.thongtin .gio
+{
+    border-radius: 10px;  /*them cái này*/
+    background-color: #E5F2E4;
+    float: right;
+    width: 400px;
+    height: 300px;
+}
+
+/*row3 them nè số lượng*/ /*cho them so luong dó*/
+.row3{
+  width: 200px;
+  text-align:left ;
+  float: right;
+}
+.row3 input{
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 20px;
+}
+.row3 button{
+  border-radius: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  text-align: center;
+  font-size: 20px;
+}
+/*----------------------------------------------------------*/
+.gio .p
+{   
+    line-height: 2px;
+}
+.gio a
+{
+          text-decoration: none;
+          color: black;    
+}
+.gio a:hover
+{
+    background: none;
+}
+.buy{
+    margin-left: 40px; /*them cái này*/
+    text-align: center; 
+    border-radius: 10px;
+    height: 30px;
+    outline: none;
+    color: black;
+    border-style:none ;
+    background: radial-gradient(circle, #B5D33B 25%, #659F42 100%, #89B440,  #4D9142);; 
+    padding-bottom:   0px;
+  }
+
+.themgio
+{
+    border-radius:10px ;
+    height: 30px;
+    outline: none;
+    color: black;
+    border-style:none ;
+    background: radial-gradient(circle, #B5D33B 25%, #659F42 100%, #89B440,  #4D9142);;
+    padding-bottom:   0px;
+}
+/*--------chitiet--------*/
+.chitiet
+{   
+    border-radius: 10px;
+    width: 880px;
+    /* padding-top: 10px; *//* day*/
+    height: 800px;
+    margin: auto;
+    border: 1px solid #89B440;
+    /* padding: 10px; *//* day*/
+    /* chỉnh thêm nè*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/*--------thongtinsp--------*/
+.thongtinsp
+{
+    padding-top: 10px;/* day*/
+    padding: 10px;   /* day*/
+    width: 580px;
+    float: left;
+    height: 800px;
+}
+/*----------------*/
+/*--------thuonghieu--------*/
+.thuonghieu{
+    padding-top: 10px;/* day*/
+    border-radius: 10px;
+    width: 250px;
+    border: 1px solid #89B440;/* day*/
+    float: right;
+    height: 788px;/* day*/
+}
+
+/*----------------*/
+/*----------------*/
+/*-----------------------------------------------------------------------------------footer*/
+

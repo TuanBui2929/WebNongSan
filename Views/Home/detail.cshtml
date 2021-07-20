@@ -1,0 +1,85 @@
+﻿@model WebNongSan.Model.SANPHAM
+
+@{
+    ViewBag.Title = "detail";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+@Styles.Render("~/Content/chitiet.css")
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#addtocard").click(function () {
+                var model = {};
+                //lấy id sản phẩm
+                model.Id = @Model.MA_SP;
+                // lấy số lượng đặt hàng
+                model.Quantity = $("#qtym").val();
+                debugger;
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("Themgiohang","Cart")',
+                    data:  JSON.stringify(model),
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function () {
+                        alert("Thêm giỏ hàng thành công!")
+                        $('#CartCount').text(@Session["count"] + 1);
+                    },
+                    error: function () {
+                        alert("Lỗi trong khi thêm vào giỏ hàng!");
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+<div style=" margin-top:150px">
+    <div class="thongtin">
+        <div class="anh">
+            <br>
+            <img class="img" src="@Model.IMAGES" alt="">
+        </div>
+        <div class="gio">
+            <p style="text-align: center;">@Model.TEN_SP</p>
+            <a>Giá bán lẻ</a> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            <a class="price">
+                @Model.GIABAN
+            </a><br>
+            <a>Tình trạng sản phẩm</a> &emsp;&emsp;&emsp;&emsp;
+            <a class="tinhtrang">Còn hàng</a>
+            <p>Vận chuyển</p>
+            <a>Chọn số lượng</a>
+            <div class="row3">
+                <!--Thêm chô này nè-->
+                <button class="btn_num num_1 button button_qty" onclick="var result = document.getElementById('qtym'); var qtypro = result.value; if( !isNaN( qtypro ) &amp;&amp; qtypro > 1 ) result.value--;return false;" type="button">-</button>
+                <input type="text" id="qtym" name="quantity" value="1" maxlength="2" class="form-control prd_quantity" onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;" onchange="if(this.value == 0)this.value=1;">
+                <button class="btn_num num_2 button button_qty" onclick="var result = document.getElementById('qtym'); var qtypro = result.value; if( !isNaN( qtypro )) result.value++;return false;" type="button">+</button><br>
+            </div>
+            <br>
+            <br>
+            <br>
+            <a class="buy" href="">MUA NGAY</a>
+            &emsp;&emsp;&emsp;&emsp;
+            <a class="themgio" id="addtocard" href="#">THÊM VÀO GIỎ HÀNG</a>
+        </div>
+    </div>
+    <div class="chitiet">
+        <div class="thongtinsp">
+            Thông tin chi tiết sản phẩm
+            <br>
+            <p>@Model.THONGTINSP</p>
+        </div>
+        <div class="thuonghieu">
+            Thông số <br>
+            Thương hiệu : &emsp;&emsp;
+            @Model.THUONGHIEU
+            <br>
+            <br>
+            <br>
+            <br>
+            <img src="@Model.IMAGES" alt="" width="250px"> <!--chinh width lại-->
+
+        </div>
+    </div>
+</div>

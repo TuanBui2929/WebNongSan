@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"><!--thư viện Font Awesome-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Nông Sản</title>
+    @Styles.Render("~/Content/style.css")
+ 
+    @Scripts.Render("~/Scripts/js/nongsan.js")
+   
+
+
+   
+
+
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            <!--het tieude-->
+            <div class="navbar">
+                <div>
+                    <img src="~/Content/images/Logo(Khongnen).png" width="150px">
+                </div>
+                <!--danh muc sản phẩm-->
+                <div class="Menudropdown">
+                    <button onclick="myFunction()" class="dropbtn">
+
+                        <h5><img src="~/Content/imagesicons/Icon_3gach.png">  Danh mục sản phẩm </h5>
+
+                    </button>
+
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#Thịt-Hải sản-trứng">Thịt - Hải sản - trứng</a>
+                        <a href="#Rau-Củ-Trái cây">Rau - Củ - Trái cây</a>
+                        <a href="#Sửa-Sản phẩm từ sửa">Sửa- Sản phẩm từ sửa</a>
+                        <a href="#Đồ uống-Nước ép">Đồ uống - Nước ép</a>
+                        <a href="#Bánh kẹo-Đặc sản">Bánh kẹo - Đặc sản</a>
+                    </div>
+
+                </div><!--het - danh muc sản phẩm-->
+
+                <div class="box">
+                    @using (Html.BeginForm("search", "Details", FormMethod.Get))
+                    {
+                       @Html.TextBox("SearchString",ViewBag.CurrenFilter as string)
+                        <input type="submit" class="icon" value="Search" />
+                    }
+
+                </div>
+                <!--<div class="box">-->
+                    <!--khung tìm kiếm-->
+                    <!--<div class="container-4">
+                        <input type="search" id="search" placeholder="Search..." />
+                        <button class="icon"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>--><!--het-khung tìm kiếm-->
+                <nav1>
+                    <ul id="MenuItems">
+                        <!--<li><button class="btndangnhap"><img src="./imagesicons/1.jpg"> Đăng nhập <el onclick="./dangnhap.html"</button> </li> -->
+                        <img src="~/Content/imagesicons/1.jpg">
+                        <span class="btndangnhap" style="margin-right:20px">
+                            @if (Session["iUser"] == null)
+                            {
+                                @Html.ActionLink("Đăng nhập", "DangNhap", "User")}
+                            else
+                            {
+                                @Html.ActionLink("Đăng xuất", "DangXuat", "User")
+
+                            }
+                        </span>
+                      
+                                <a href="@Url.Action("Giohang","Cart")" class="widget-view">
+
+                                    <img class="icon-area" src="~/Content/imagesicons/Icon_Gio.png">
+                                    <span class="notify" id="CartCount">@Session["count"] </span>
+                                    <li><a href="">Giỏ hàng</a></li>
+                                </a>
+
+                    
+                        
+
+                        @*<img src="~/Content/imagesicons/Icon_Gio.png">
+                        <li><a href="">Giỏ hàng</a></li>*@
+                        <img src="~/Content/imagesicons/Icon_Lienhe.png">
+                        <li><a href="./lienhe.html">Liên hệ</a></li>
+                        @if (Session["Ten"] != null)
+                        {
+                            <span style="color: yellow"> Xin Chào <b> @Session["Ten"]  </b> </span>
+                        }
+
+
+
+                    </ul>
+                </nav1>
+            </div><!--het tieude-->
+        </div><!--het container-->
+    </div><!--hết header-->
+
+
+    @RenderBody()
+
+
+    <div class="footer">
+        <!--footer-->
+        <div class="footer-left">
+            <img src="~/Content/images/Logo(Khongnen).png" width="150px">
+
+            <div class="Icon_diachi">
+                <img src="~/Content/images/Icon_dichi(khongnen).png"><b>  CÔNG TY THỰC PHẨM SẠCH NÔNG SẢN</b><br>
+                <p>Trụ sở: Lô E1 Khu Công Nghệ Cao, Xa Lộ Hà Nội, P.Hiệp Phú, Q.9, Tp.Hồ Chí Minh</p>
+            </div>
+
+            <div class="Icon_call">
+                <img src="~/Content/images/Icon_call(Khongnen).png" <p> 0333580868</p>
+            </div>
+
+            <div class="Icon_Email">
+                <img src="~/Content/images/Icon_Email(khongnen).png" <p> nongsansach@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-right">
+            <b>CẨM NANG SỬ DỤNG</b>
+            <p>
+                Hướng dẫn mua hàng <br> Giao nhận và thanh toán
+            </p>
+            <b>CHÍNH SÁCH</b>
+            <p>
+                Chính sách bảo hành <br>
+                Chính sách vận chuyển <br>
+                Chính sách bảo mật <br>
+                Chính sách đổi trả <br>
+                Chính sách chung
+            </p>
+        </div>
+
+
+
+    </div><!--het - footer-->
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

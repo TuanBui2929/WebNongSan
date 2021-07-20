@@ -1,0 +1,237 @@
+﻿@model IEnumerable<WebNongSan.Model.SANPHAM>
+@{
+
+    ViewBag.Title = "home";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+
+}
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+        $(function () {
+            $("#addtocard").click(function () {-->
+                @*var model = {};
+                //lấy id sản phẩm
+                model.Id = @Model.MA_SP;
+                // lấy số lượng đặt hàng
+                model.Quantity = 1;
+                debugger;*@
+                <!--$.ajax({
+                    type: "POST",
+                     url: '@Url.Action("Themgiohang","Cart")',
+                    data:  /*JSON.stringify(model)*/{
+                        Id: $(this).data("#id"),
+                        Quantity: 1
+                    },
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function () {
+                        alert("Thêm giỏ hàng thành công!")
+                        $('#CartCount').text(@Session["count"] + 1);
+                    },
+                    error: function () {
+                        alert("Lỗi trong khi thêm vào giỏ hàng!");
+                    }
+                });
+                return false;
+            });
+        });
+</script>-->
+<div class="banner">
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="~/Content/images/banner_dauan.jpg" style="width:100%">
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="~/Content/images/banner_banhvanuoc2.jpg" style="width:100%">
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="~/Content/images/banner_banhvanuoc.jpg" style="width:100%">
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="~/Content/images/ban1.png" style="width:100%">
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="~/Content/images/ban2.png" style="width:100%">
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="~/Content/images/ban3.png" style="width:100%">
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="~/Content/images/poster1.jpg" style="width:100%">
+            <div class="text"></div>
+        </div>
+        <br>
+        <div class="nut">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <script>
+            var slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1 }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+                setTimeout(showSlides, 3000); // Change image every 5 seconds
+            }
+        </script>
+    </div>
+</div><!--het banner-->
+<div class="content">
+
+    <div class="item">
+        <div class="food">
+            <h1>Thịt - Hải sản - trứng></h1>
+            <div class="col5">
+                @for (int i = 0; i < 5; i++)
+                {
+                    var thit = Model.Where(m => m.DANHMUCSANPHAM.TENDANHMUC.Equals("THIT_HAISAN_TRUNG")).ToArray();
+                    <li>
+                        <a href="@Url.Action("detail","Home",new { Id = thit[i].MA_SP})">
+                            <img src="@thit[i].IMAGES" width="140px" height="115px">
+                        </a>
+                        <div class="nameproduct"> <p>@thit[i].TEN_SP</p> </div>
+                        <b class="price">@thit[i].GIABAN</b><br>
+
+
+                    </li>
+
+
+                }
+            </div>
+
+            <a class="all" href="@Url.Action("Haisan","Details")">Xem tất cả</a>
+        </div>  @* finish div food*@
+
+        <div class="vegetable">
+            <h1>Rau-Củ-Trái cây></h1>
+            <div class="col5">
+                @for (int i = 0; i < 5; i++)
+                {
+                    var thit = Model.Where(m => m.DANHMUCSANPHAM.TENDANHMUC.Equals("RAU_CU_TRAICAY")).ToArray();
+
+                    <li>
+                        <a href="@Url.Action("detail","Home",new { Id = thit[i].MA_SP})">
+                            <img src="@thit[i].IMAGES" width="140px" height="115px">
+                        </a>
+                        <div class="nameproduct"> <p>@thit[i].TEN_SP</p> </div>
+                        <b class="price">@thit[i].GIABAN</b><br>
+
+
+
+                    </li>
+
+                }
+            </div>
+            <a class="all" href="@Url.Action("Traicay","Details")">Xem tất cả</a>
+        </div> @* finish div vegetable *@
+
+
+        <div class="Milk">
+            <h1>Sữa-Sản phẩm từ sữa></h1>
+            <div class="col5">
+                @for (int i = 0; i < 5; i++)
+                {
+                    var thit = Model.Where(m => m.DANHMUCSANPHAM.TENDANHMUC.Equals("SUA_SANPHAMTUSUA")).ToArray();
+
+                    <li>
+                        <a href="@Url.Action("detail","Home",new { Id = thit[i].MA_SP})">
+                            <img src="@thit[i].IMAGES" width="140px" height="115px">
+                        </a>
+                        <div class="nameproduct"> <p>@thit[i].TEN_SP</p> </div>
+                        <b class="price">@thit[i].GIABAN</b><br>
+
+                    
+
+                    </li>
+
+                }
+            </div>
+
+            <a class="all" href="@Url.Action("Sua","Details")">Xem tất cả</a>
+        </div>  @* finish div Milk *@
+
+
+        <div class="drink">
+            <h1>Đô uống-Nước ép></h1>
+            <div class="col5">
+                @for (int i = 0; i < 5; i++)
+                {
+                    var thit = Model.Where(m => m.DANHMUCSANPHAM.TENDANHMUC.Equals("DOUONG_NUOCEP")).ToArray();
+
+                <li>
+                    <a href="@Url.Action("detail","Home",new { Id = thit[i].MA_SP})">
+                        <img src="@thit[i].IMAGES" width="140px" height="115px">
+                    </a>
+                    <div class="nameproduct"> <p>@thit[i].TEN_SP</p> </div>
+                    <b class="price">@thit[i].GIABAN</b><br>
+
+                    
+
+                </li>
+
+                }
+            </div>
+            <a class="all" href="@Url.Action("Douong","Details")">Xem tất cả</a>
+        </div>@* finish div drink *@
+
+
+        <div class="candy">
+            <h1>Bánh kẹo-Đồ ăn vật></h1>
+            <div class="col5">
+                @for (int i = 0; i < 5; i++)
+                {
+                    var thit = Model.Where(m => m.DANHMUCSANPHAM.TENDANHMUC.Equals("BANHKEO_DACSAN")).ToArray();
+
+                <li>
+                    <a href="@Url.Action("detail","Home",new { Id = thit[i].MA_SP})">
+                        <img src="@thit[i].IMAGES" width="140px" height="115px">
+                    </a>
+                    <div class="nameproduct"> <p>@thit[i].TEN_SP</p> </div>
+                    <b class="price">@thit[i].GIABAN</b><br>
+
+                  
+                   
+
+                </li>
+
+                }
+            </div>
+            <a class="all" href="@Url.Action("Banhkeo","Details")">Xem tất cả</a>
+        </div>@* finish div candy *@
+
+    </div>
+</div>
+
+
+

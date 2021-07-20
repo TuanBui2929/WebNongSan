@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WEBNONGSANModelStoreContainer" CdmEntityContainer="WEBNONGSANEntities1">
+    <EntitySetMapping Name="TAIKHOANs">
+      <EntityTypeMapping TypeName="WEBNONGSANModel.TAIKHOAN">
+        <MappingFragment StoreEntitySet="TAIKHOAN">
+          <ScalarProperty Name="MAXACTHUC" ColumnName="MAXACTHUC" />
+          <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+          <ScalarProperty Name="TENKH" ColumnName="TENKH" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="MK" ColumnName="MK" />
+          <ScalarProperty Name="XACNHANMATKHAU" ColumnName="XACNHANMATKHAU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DANHMUCSANPHAMs">
+      <EntityTypeMapping TypeName="WEBNONGSANModel.DANHMUCSANPHAM">
+        <MappingFragment StoreEntitySet="DANHMUCSANPHAM">
+          <ScalarProperty Name="TENDANHMUC" ColumnName="TENDANHMUC" />
+          <ScalarProperty Name="MALOAISP" ColumnName="MALOAISP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GIOHANGs">
+      <EntityTypeMapping TypeName="WEBNONGSANModel.GIOHANG">
+        <MappingFragment StoreEntitySet="GIOHANG">
+          <ScalarProperty Name="MA_SP" ColumnName="MA_SP" />
+          <ScalarProperty Name="MAGH" ColumnName="MAGH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIENHEs">
+      <EntityTypeMapping TypeName="WEBNONGSANModel.LIENHE">
+        <MappingFragment StoreEntitySet="LIENHE">
+          <ScalarProperty Name="NOIDUNGPHANHOI" ColumnName="NOIDUNGPHANHOI" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="HOVATEN" ColumnName="HOVATEN" />
+          <ScalarProperty Name="MALH" ColumnName="MALH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHANVIENs">
+      <EntityTypeMapping TypeName="WEBNONGSANModel.NHANVIEN">
+        <MappingFragment StoreEntitySet="NHANVIEN">
+          <ScalarProperty Name="MA_SP" ColumnName="MA_SP" />
+          <ScalarProperty Name="IMAGES" ColumnName="IMAGES" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="DIACHICUTHE" ColumnName="DIACHICUTHE" />
+          <ScalarProperty Name="CHUCVU" ColumnName="CHUCVU" />
+          <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+          <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+          <ScalarProperty Name="TENNV" ColumnName="TENNV" />
+          <ScalarProperty Name="MANV" ColumnName="MANV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SANPHAMs">
+      <EntityTypeMapping TypeName="WEBNONGSANModel.SANPHAM">
+        <MappingFragment StoreEntitySet="SANPHAM">
+          <ScalarProperty Name="MALOAISP" ColumnName="MALOAISP" />
+          <ScalarProperty Name="IMAGES" ColumnName="IMAGES" />
+          <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+          <ScalarProperty Name="GIAMGIA" ColumnName="GIAMGIA" />
+          <ScalarProperty Name="THUONGHIEU" ColumnName="THUONGHIEU" />
+          <ScalarProperty Name="THONGTINSP" ColumnName="THONGTINSP" />
+          <ScalarProperty Name="VANCHUYEN" ColumnName="VANCHUYEN" />
+          <ScalarProperty Name="GIAGOC" ColumnName="GIAGOC" />
+          <ScalarProperty Name="GIABAN" ColumnName="GIABAN" />
+          <ScalarProperty Name="TEN_SP" ColumnName="TEN_SP" />
+          <ScalarProperty Name="MA_SP" ColumnName="MA_SP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="THANHTOANs">
+      <EntityTypeMapping TypeName="WEBNONGSANModel.THANHTOAN">
+        <MappingFragment StoreEntitySet="THANHTOAN">
+          <ScalarProperty Name="MAVOUCHER" ColumnName="MAVOUCHER" />
+          <ScalarProperty Name="NOIDUNGGH" ColumnName="NOIDUNGGH" />
+          <ScalarProperty Name="NOIDUNGGC" ColumnName="NOIDUNGGC" />
+          <ScalarProperty Name="HINHTHUCTHANHTOAN" ColumnName="HINHTHUCTHANHTOAN" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="DIACHICUTHE" ColumnName="DIACHICUTHE" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="TENKHTT" ColumnName="TENKHTT" />
+          <ScalarProperty Name="MATT" ColumnName="MATT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VANCHUYENs">
+      <EntityTypeMapping TypeName="WEBNONGSANModel.VANCHUYEN">
+        <MappingFragment StoreEntitySet="VANCHUYEN">
+          <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
+          <ScalarProperty Name="HINHTHUCVANCHUYEN" ColumnName="HINHTHUCVANCHUYEN" />
+          <ScalarProperty Name="MAVANCHUYEN" ColumnName="MAVANCHUYEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VOUCHERs">
+      <EntityTypeMapping TypeName="WEBNONGSANModel.VOUCHER">
+        <MappingFragment StoreEntitySet="VOUCHER">
+          <ScalarProperty Name="TENVOUCHER" ColumnName="TENVOUCHER" />
+          <ScalarProperty Name="MAVOUCHER" ColumnName="MAVOUCHER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATHANGs">
+      <EntityTypeMapping TypeName="WEBNONGSANModel.DATHANG">
+        <MappingFragment StoreEntitySet="DATHANG">
+          <ScalarProperty Name="NGAYGIAO" ColumnName="NGAYGIAO" />
+          <ScalarProperty Name="NGAYDAT" ColumnName="NGAYDAT" />
+          <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+          <ScalarProperty Name="MAVOUCHER" ColumnName="MAVOUCHER" />
+          <ScalarProperty Name="MAVANCHUYEN" ColumnName="MAVANCHUYEN" />
+          <ScalarProperty Name="MATT" ColumnName="MATT" />
+          <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+          <ScalarProperty Name="MANV" ColumnName="MANV" />
+          <ScalarProperty Name="MAGH" ColumnName="MAGH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHACHHANGs">
+      <EntityTypeMapping TypeName="WEBNONGSANModel.KHACHHANG">
+        <MappingFragment StoreEntitySet="KHACHHANG">
+          <ScalarProperty Name="IMAGES" ColumnName="IMAGES" />
+          <ScalarProperty Name="DIACHICUTHE" ColumnName="DIACHICUTHE" />
+          <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+          <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+          <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

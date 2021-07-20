@@ -1,0 +1,297 @@
+body{
+    font-family: "Poppins", sans-serif;
+    /*chiều rộng của toàn body*/
+    /*width: 1077px;*/
+    /*căn ra giữa*/
+    margin: 0px auto;
+
+}
+.header{
+    background: #497745;
+    height: 110px;
+    width: 1500px;
+    
+}
+/*-----------------------------------------------------------------container*/
+.container{
+    margin: auto;
+    max-width: 1300px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+/* tìm kiếm*/
+.box{
+    padding-left: 20px;
+    padding-bottom: 20px;
+    
+}
+.container-4{
+    overflow: hidden;
+    width: 299px;
+    vertical-align: middle;
+    white-space: nowrap;
+    border-radius: 10px ;
+    border-color: black ;
+    border-style: groove;
+  }
+  .container-4 input#search{
+    width: 300px;
+    height: 50px;   
+    background: #ffffff;
+    border: none;
+    font-size: 10pt;
+    float: left;
+    color: rgb(0, 0, 0);
+    padding-left: 15px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+  .container-4 input#search::-webkit-input-placeholder {
+    color: #65737e;
+ }
+  
+ .container-4 input#search:-moz-placeholder { /* Firefox 18- */
+    color: #65737e;  
+ }
+  
+ .container-4 input#search::-moz-placeholder {  /* Firefox 19+ */
+    color: #65737e;  
+ }
+  
+ .container-4 input#search:-ms-input-placeholder {  
+    color: #65737e;  
+ }
+ .container-4 button.icon{
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+   
+    border: none;
+    background: #232833;
+    height: 50px;
+    width: 50px;
+    color: #4f5b66;
+    opacity: 0;
+    font-size: 10pt;
+   
+    -webkit-transition: all .55s ease;
+    -moz-transition: all .55s ease;
+    -ms-transition: all .55s ease;
+    -o-transition: all .55s ease;
+    transition: all .55s ease;
+  }
+  .container-4:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon{
+    outline: none;
+    opacity: 1;
+    margin-left: -50px;
+  }
+ 
+  .container-4:hover button.icon:hover{
+    background: rgb(153, 202, 133);
+  }
+/* 3  hình */
+#MenuItems img{
+    width: 20px;
+    height: 20px;
+    
+}
+
+/*logo*/
+.navbar img{
+    width: 165px;
+    height: 113px;
+    
+}
+/* 3 gach*/
+.Menudropdown img{
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+}
+.Menudropdown h5{
+    font-size: 15px;
+}
+/*box thanh tìm kiếm*/
+.box{
+
+    margin-top: 30px;
+}
+/*menu*/
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+
+}
+/* nav1 đăng nhập, đăng ký, giở hàng, liên hệ*/
+nav1{
+    flex: 1;
+    text-align: right;
+}
+nav1 ul{
+    display: inline-block;
+    list-style: none;
+}
+nav1 ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+    
+}
+nav1 ul .btnhomepage{
+  width: 30px;
+  height: 20px;
+  margin-top: 20px;
+}
+/*menu danh mục sản phẩm*/
+
+  /*thu chu vao Menu*/
+.Menudropdown {
+    float: left;
+    overflow: hidden;
+
+  }
+  /*chình bên ngoài*/
+  .Menudropdown .dropbtn {
+    border: none;
+    outline: none;
+    color: white;
+    background: #497745;
+    font-family: inherit;
+    margin: 0;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+    border-color:  #4D9142;
+    border-radius: 10px 40px;
+    border-style: groove;
+
+    overflow: hidden;
+    position: fixed;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+.dropdown-content a:hover {
+    color: #fff;
+    text-align: center;
+    background: radial-gradient(circle, #B5D33B 25%, #659F42 100%, #89B440,  #4D9142);; border-radius: 10px 40px;
+}
+
+.Menudropdown:hover .dropdown-content {display: block;}
+
+.Menudropdown:hover .dropbtn {background-color: #497745;}
+#MenuItems a:hover{
+  background: radial-gradient(circle, #B5D33B 25%, #659F42 100%, #89B440,  #4D9142);; border-radius: 10px 10px;
+}
+/*-----------------------------------------dang ky*/
+.Register{
+    background-color: rgb(255, 255, 255);
+  text-align: center;
+  margin: 0px auto;
+  height: 700px;
+  width: 800px;
+  border-radius: 20px;
+  border-color:  #4D9142;
+  border-style: groove;
+  margin-top: 90px;
+  margin-bottom: 50px;
+}
+.text-danger{
+    color: red;
+}
+.Register-1 input {
+    border-radius: 20px;
+    border-color: rgb(0, 0, 0);
+    border-style: groove;
+    width: 500px;
+    height: 30px;
+    margin-top: 10px;
+    /*be goc xong thì bo dương vien*/
+    outline: none;
+}
+.container-signin a{
+    color: blue;
+}
+.Terms a{
+    color: blue;
+}
+.Terms input{
+  font-size: 20px;
+}
+.Terms input:hover{
+  background: #659F42;
+}
+.registerbtn{
+  margin-top: 20px;
+  font-size: 20px;
+}
+.registerbtn:hover{
+  background: #659F42;
+}
+/*------------------------------------------------------------footer*/
+.footer{
+  height: 500px;
+  padding-left: 50px;
+  background-color: #497745;
+  padding-top: 80px;
+
+}
+.footer .footer-left{
+ 
+  background-color:  #cbdb88;
+  width: 900px;
+    
+    /*do cao toi thieu*/
+    min-height: 400px;
+    /*nằm về ben trai */
+    float: left;
+    /*border-radius: 10%;*/
+    /*border-radius: 20px 20px;*/
+    padding-left: 50px;
+}
+.footer .footer-left .Icon_diachi img{
+  width: 30px;
+  height: 30px;
+}
+.footer .footer-left .Icon_call img{
+  width: 30px;
+  height: 30px;
+}
+.footer .footer-left .Icon_Email img{
+  width: 30px;
+  height: 30px;
+}
+.footer .footer-right{
+  background-color:  #cbdb88;
+ 
+  width: 400px;
+  
+  margin-bottom: 600px;
+  padding-left: 20px;
+  padding-top: 20px; 
+    /*do cao toi thieu*/
+    min-height: 380px;
+    /*nằm về ben trai */
+    float: left;
+    /*border-radius: 10%;*/
+    
+}

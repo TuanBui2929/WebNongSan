@@ -1,0 +1,43 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<WebNongSan.Model.SANPHAM>
+@{
+    ViewBag.Title = "Douong";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+<div style=" margin-top:150px">
+
+    <div class="content">
+
+        <div class="vegetable">
+            <h1>Đô uống-Nước ép></h1>
+
+
+            <div class="col5">
+                @foreach (var item in Model)
+                {
+
+                    <li>
+                        <img src="@item.IMAGES" width="140px" height="115px">
+                        <div class="nameproduct"> <p>@item.TEN_SP</p> </div>
+
+                        <b class="price">@item.GIABAN</b><br>
+                        <a class="shopcart" href="#">Thêm vào giở hàng</a>
+                    </li>
+                }
+            </div>
+            <div style="margin-top: 20px">
+                Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber) of @Model.PageCount
+                @Html.PagedListPager(Model, page => Url.Action("Douong",
+               new { page }
+               ))
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+

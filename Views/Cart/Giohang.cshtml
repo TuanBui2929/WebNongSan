@@ -1,0 +1,148 @@
+﻿@model IEnumerable<WebNongSan.Model.CartModel>
+@{
+    ViewBag.Title = "Giohang";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+    $(function () {
+        $("#removecart").click(function () {
+            var model = {};
+            //lấy id sản phẩm
+            model.Id = $("#productid").val();
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("Remove", "Cart")',
+                data:  JSON.stringify(model) ,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function () {
+                    $('#CartCount').text(@Session["count"] - 1);
+                    $("#product-" + model.Id).remove();
+                },
+                error: function () {
+                    alert("Lỗi trong khi thêm vào giỏ hàng!");
+                }
+            });
+            return false;
+        });
+    });
+</script>
+<div style=" margin-top:150px">
+    <div class="small-container">
+
+        <form class="Giohang1">
+            <div class="tieude">
+                <p>Giỏ hàng của bạn( <a id="slsanpham"></a> sản phẩm)</p>
+            </div>
+            <table class="row">
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr id="product-@item.sanpham.MA_SP">
+                            <div class="col4">
+                                <div class="row1">
+                                    <img id="giohang" src="@item.sanpham.IMAGES">
+                                </div>
+                            </div>
+                            <div class="col4">
+                                <div class="row2">
+                                    <p id="thongtinsanpham">@item.sanpham.TEN_SP</p>
+                                    <b><p id="giatien">@item.sanpham.GIABAN</p>
+                                </div>
+                            </div>
+                            <div class="col4">
+                                <div class="row3">
+                                    <button class="btn_num num_1 button button_qty" onclick="var result = document.getElementById('qtym'); var qtypro = result.value; if( !isNaN( qtypro ) &amp;&amp; qtypro > 1 ) result.value--;return false;" type="button">-</button>
+                                    <input type="text" id="qtym" name="quantity" value="@item.Quantity" maxlength="2" class="form-control prd_quantity" onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;" onchange="if(this.value == 0)this.value=1;">
+                                    <button class="btn_num num_2 button button_qty" onclick="var result = document.getElementById('qtym'); var qtypro = result.value; if( !isNaN( qtypro )) result.value++;return false;" type="button">+</button><br>
+                                </div>
+                            </div>
+
+
+                            <div class="col4">
+                                <div class="row4">
+                                    <p>Tổng tiền:</p>
+                                    <b><p id="giatien">  @(item.sanpham.GIABAN*item.Quantity)</p></b>
+                                    <div class="Row_con"></div>
+                                    <div class="colcon_2">
+                                        <div class="iconxoa">
+                                            <img src="~/Content/imagesicons/Icon_Xoa.png">
+                                        </div>
+                                    </div>
+                                    <input type="hidden" value="@item.sanpham.MA_SP" id="productid" />
+                                    <div class="colcon_2">
+                                        <span><a href="#" id="removecart">Xóa</a></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <p> Giỏ hàng không có sản phẩm nào :v</p>
+                }
+
+            </table>
+
+
+
+    </div>
+    </form>
+</div>
+<div class="small-container">
+    <div class="Giohang2">
+        <div class="thanhtien">
+            <p>Thành tiền:   <p id="thanhtien"></p></p>
+            <br>
+        </div>
+        <div class="Row_3">
+            <div class="col_3">
+                <div class="tieptuc">
+                    <button style="margin-top: 20px;
+                                min-height: 30px;
+                                min-width: 200px;
+                                font-size: 18px ;
+                                font-style:unset;
+                                color: #4D9142;
+                                background: #E5F2E4;
+                                border: o.5px;
+                                border-radius: 15px;
+                                background-size: 200%;
+                                transition: 0,5s;
+                                font-weight: bold;
+                                margin-right: 20px;">
+                        Tiếp tục mua hàng
+                    </button>
+                </div>
+            </div>
+            <div class="col_3">
+                <div class="gui">
+                    <button onclick="window.location.href='./Thanhtoan.html'" style="margin-top: 20px;
+                                min-height: 30px;
+                                min-width: 150px;
+                                font-size: 18px ;
+                                font-style:unset;
+                                color: #fff;
+                                background: linear-gradient(120deg, var(--bg1), var(--bg2),var(--bg3),var(--bg4));
+                                border: none;
+                                border-radius: 15px;
+                                background-size: 200%;
+                                transition: 0,5s;
+                                font-weight: bold;
+                                margin-right: 20px;
+                                ">
+                        Thanh toán
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+

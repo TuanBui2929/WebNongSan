@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="964be5b7e4e34fcd959501bf03b60cfa" Name="Diagram1">
+        <EntityTypeShape EntityType="WEBNONGSANModel.TAIKHOAN" Width="1.5" PointX="0.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.DANHMUCSANPHAM" Width="1.5" PointX="1.5" PointY="11.5" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.GIOHANG" Width="1.5" PointX="6" PointY="11.375" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.LIENHE" Width="1.5" PointX="0.75" PointY="6.5" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.NHANVIEN" Width="1.5" PointX="6" PointY="14.875" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.SANPHAM" Width="1.5" PointX="3.75" PointY="10.375" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.THANHTOAN" Width="1.5" PointX="6" PointY="3.125" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.VANCHUYEN" Width="1.5" PointX="6" PointY="7.875" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.VOUCHER" Width="1.5" PointX="3.75" PointY="3.75" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.DATHANG" Width="1.5" PointX="8.25" PointY="2.375" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.KHACHHANG" Width="1.5" PointX="3.375" PointY="0.75" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__SANPHAM__MALOAIS__3E52440B" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__DATHANG__MAGH__35BCFE0A" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__GIOHANG__MA_SP__3B75D760" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__DATHANG__MANV__37A5467C" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__NHANVIEN__MA_SP__3D5E1FD2" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__DATHANG__MAKH__36B12243" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__KHACHHANG__MAKH__3C69FB99" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__DATHANG__MATT__38996AB5" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__THANHTOAN__MAVOU__3F466844" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__DATHANG__MAVANCH__398D8EEE" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__DATHANG__MAVOUCH__3A81B327" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

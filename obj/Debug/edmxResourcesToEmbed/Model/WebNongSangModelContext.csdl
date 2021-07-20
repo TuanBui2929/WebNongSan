@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WEBNONGSANModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TAIKHOAN">
+    <Key>
+      <PropertyRef Name="MAKH" />
+    </Key>
+    <Property Name="MAKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENKH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SDT" Type="Int32" Nullable="false" />
+    <Property Name="MK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="XACNHANMATKHAU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MAXACTHUC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DATHANGs" Relationship="WEBNONGSANModel.FK__DATHANG__MAKH__36B12243" FromRole="TAIKHOAN" ToRole="DATHANG" />
+    <NavigationProperty Name="KHACHHANGs" Relationship="WEBNONGSANModel.FK__KHACHHANG__MAKH__3C69FB99" FromRole="TAIKHOAN" ToRole="KHACHHANG" />
+  </EntityType>
+  <EntityContainer Name="WEBNONGSANEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TAIKHOANs" EntityType="Self.TAIKHOAN" />
+    <EntitySet Name="DANHMUCSANPHAMs" EntityType="WEBNONGSANModel.DANHMUCSANPHAM" />
+    <EntitySet Name="GIOHANGs" EntityType="WEBNONGSANModel.GIOHANG" />
+    <EntitySet Name="LIENHEs" EntityType="WEBNONGSANModel.LIENHE" />
+    <EntitySet Name="NHANVIENs" EntityType="WEBNONGSANModel.NHANVIEN" />
+    <EntitySet Name="SANPHAMs" EntityType="WEBNONGSANModel.SANPHAM" />
+    <EntitySet Name="THANHTOANs" EntityType="WEBNONGSANModel.THANHTOAN" />
+    <EntitySet Name="VANCHUYENs" EntityType="WEBNONGSANModel.VANCHUYEN" />
+    <EntitySet Name="VOUCHERs" EntityType="WEBNONGSANModel.VOUCHER" />
+    <EntitySet Name="DATHANGs" EntityType="WEBNONGSANModel.DATHANG" />
+    <EntitySet Name="KHACHHANGs" EntityType="WEBNONGSANModel.KHACHHANG" />
+    <AssociationSet Name="FK__SANPHAM__MALOAIS__3E52440B" Association="WEBNONGSANModel.FK__SANPHAM__MALOAIS__3E52440B">
+      <End Role="DANHMUCSANPHAM" EntitySet="DANHMUCSANPHAMs" />
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DATHANG__MAGH__35BCFE0A" Association="WEBNONGSANModel.FK__DATHANG__MAGH__35BCFE0A">
+      <End Role="GIOHANG" EntitySet="GIOHANGs" />
+      <End Role="DATHANG" EntitySet="DATHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GIOHANG__MA_SP__3B75D760" Association="WEBNONGSANModel.FK__GIOHANG__MA_SP__3B75D760">
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+      <End Role="GIOHANG" EntitySet="GIOHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DATHANG__MANV__37A5467C" Association="WEBNONGSANModel.FK__DATHANG__MANV__37A5467C">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="DATHANG" EntitySet="DATHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__NHANVIEN__MA_SP__3D5E1FD2" Association="WEBNONGSANModel.FK__NHANVIEN__MA_SP__3D5E1FD2">
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DATHANG__MAKH__36B12243" Association="WEBNONGSANModel.FK__DATHANG__MAKH__36B12243">
+      <End Role="TAIKHOAN" EntitySet="TAIKHOANs" />
+      <End Role="DATHANG" EntitySet="DATHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__KHACHHANG__MAKH__3C69FB99" Association="WEBNONGSANModel.FK__KHACHHANG__MAKH__3C69FB99">
+      <End Role="TAIKHOAN" EntitySet="TAIKHOANs" />
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DATHANG__MATT__38996AB5" Association="WEBNONGSANModel.FK__DATHANG__MATT__38996AB5">
+      <End Role="THANHTOAN" EntitySet="THANHTOANs" />
+      <End Role="DATHANG" EntitySet="DATHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__THANHTOAN__MAVOU__3F466844" Association="WEBNONGSANModel.FK__THANHTOAN__MAVOU__3F466844">
+      <End Role="VOUCHER" EntitySet="VOUCHERs" />
+      <End Role="THANHTOAN" EntitySet="THANHTOANs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DATHANG__MAVANCH__398D8EEE" Association="WEBNONGSANModel.FK__DATHANG__MAVANCH__398D8EEE">
+      <End Role="VANCHUYEN" EntitySet="VANCHUYENs" />
+      <End Role="DATHANG" EntitySet="DATHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DATHANG__MAVOUCH__3A81B327" Association="WEBNONGSANModel.FK__DATHANG__MAVOUCH__3A81B327">
+      <End Role="VOUCHER" EntitySet="VOUCHERs" />
+      <End Role="DATHANG" EntitySet="DATHANGs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="DANHMUCSANPHAM">
+    <Key>
+      <PropertyRef Name="MALOAISP" />
+    </Key>
+    <Property Name="MALOAISP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENDANHMUC" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SANPHAMs" Relationship="WEBNONGSANModel.FK__SANPHAM__MALOAIS__3E52440B" FromRole="DANHMUCSANPHAM" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="GIOHANG">
+    <Key>
+      <PropertyRef Name="MAGH" />
+    </Key>
+    <Property Name="MAGH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MA_SP" Type="Int32" />
+    <NavigationProperty Name="DATHANGs" Relationship="WEBNONGSANModel.FK__DATHANG__MAGH__35BCFE0A" FromRole="GIOHANG" ToRole="DATHANG" />
+    <NavigationProperty Name="SANPHAM" Relationship="WEBNONGSANModel.FK__GIOHANG__MA_SP__3B75D760" FromRole="GIOHANG" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="LIENHE">
+    <Key>
+      <PropertyRef Name="MALH" />
+    </Key>
+    <Property Name="MALH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HOVATEN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NOIDUNGPHANHOI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="MANV" />
+    </Key>
+    <Property Name="MANV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENNV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYSINH" Type="DateTime" Precision="0" />
+    <Property Name="GIOITINH" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="CHUCVU" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHICUTHE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SDT" Type="Int32" />
+    <Property Name="IMAGES" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MA_SP" Type="Int32" />
+    <NavigationProperty Name="DATHANGs" Relationship="WEBNONGSANModel.FK__DATHANG__MANV__37A5467C" FromRole="NHANVIEN" ToRole="DATHANG" />
+    <NavigationProperty Name="SANPHAM" Relationship="WEBNONGSANModel.FK__NHANVIEN__MA_SP__3D5E1FD2" FromRole="NHANVIEN" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="SANPHAM">
+    <Key>
+      <PropertyRef Name="MA_SP" />
+    </Key>
+    <Property Name="MA_SP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TEN_SP" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="GIABAN" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="GIAGOC" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="VANCHUYEN" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="THONGTINSP" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="THUONGHIEU" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="GIAMGIA" Type="Int32" />
+    <Property Name="SOLUONG" Type="Int32" />
+    <Property Name="IMAGES" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MALOAISP" Type="Int32" />
+    <NavigationProperty Name="DANHMUCSANPHAM" Relationship="WEBNONGSANModel.FK__SANPHAM__MALOAIS__3E52440B" FromRole="SANPHAM" ToRole="DANHMUCSANPHAM" />
+    <NavigationProperty Name="GIOHANGs" Relationship="WEBNONGSANModel.FK__GIOHANG__MA_SP__3B75D760" FromRole="SANPHAM" ToRole="GIOHANG" />
+    <NavigationProperty Name="NHANVIENs" Relationship="WEBNONGSANModel.FK__NHANVIEN__MA_SP__3D5E1FD2" FromRole="SANPHAM" ToRole="NHANVIEN" />
+  </EntityType>
+  <EntityType Name="THANHTOAN">
+    <Key>
+      <PropertyRef Name="MATT" />
+    </Key>
+    <Property Name="MATT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENKHTT" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DIACHICUTHE" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="Int32" Nullable="false" />
+    <Property Name="HINHTHUCTHANHTOAN" Type="Byte" />
+    <Property Name="NOIDUNGGC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NOIDUNGGH" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MAVOUCHER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DATHANGs" Relationship="WEBNONGSANModel.FK__DATHANG__MATT__38996AB5" FromRole="THANHTOAN" ToRole="DATHANG" />
+    <NavigationProperty Name="VOUCHER" Relationship="WEBNONGSANModel.FK__THANHTOAN__MAVOU__3F466844" FromRole="THANHTOAN" ToRole="VOUCHER" />
+  </EntityType>
+  <EntityType Name="VANCHUYEN">
+    <Key>
+      <PropertyRef Name="MAVANCHUYEN" />
+    </Key>
+    <Property Name="MAVANCHUYEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HINHTHUCVANCHUYEN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TRANGTHAI" Type="Byte" />
+    <NavigationProperty Name="DATHANGs" Relationship="WEBNONGSANModel.FK__DATHANG__MAVANCH__398D8EEE" FromRole="VANCHUYEN" ToRole="DATHANG" />
+  </EntityType>
+  <EntityType Name="VOUCHER">
+    <Key>
+      <PropertyRef Name="MAVOUCHER" />
+    </Key>
+    <Property Name="MAVOUCHER" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TENVOUCHER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="THANHTOANs" Relationship="WEBNONGSANModel.FK__THANHTOAN__MAVOU__3F466844" FromRole="VOUCHER" ToRole="THANHTOAN" />
+    <NavigationProperty Name="DATHANGs" Relationship="WEBNONGSANModel.FK__DATHANG__MAVOUCH__3A81B327" FromRole="VOUCHER" ToRole="DATHANG" />
+  </EntityType>
+  <EntityType Name="DATHANG">
+    <Key>
+      <PropertyRef Name="MAGH" />
+      <PropertyRef Name="MANV" />
+      <PropertyRef Name="MAKH" />
+      <PropertyRef Name="MATT" />
+      <PropertyRef Name="MAVANCHUYEN" />
+    </Key>
+    <Property Name="MAGH" Type="Int32" Nullable="false" />
+    <Property Name="MANV" Type="Int32" Nullable="false" />
+    <Property Name="MAKH" Type="Int32" Nullable="false" />
+    <Property Name="MATT" Type="Int32" Nullable="false" />
+    <Property Name="MAVANCHUYEN" Type="Int32" Nullable="false" />
+    <Property Name="MAVOUCHER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TONGTIEN" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="NGAYDAT" Type="DateTime" Precision="3" />
+    <Property Name="NGAYGIAO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="GIOHANG" Relationship="WEBNONGSANModel.FK__DATHANG__MAGH__35BCFE0A" FromRole="DATHANG" ToRole="GIOHANG" />
+    <NavigationProperty Name="NHANVIEN" Relationship="WEBNONGSANModel.FK__DATHANG__MANV__37A5467C" FromRole="DATHANG" ToRole="NHANVIEN" />
+    <NavigationProperty Name="TAIKHOAN" Relationship="WEBNONGSANModel.FK__DATHANG__MAKH__36B12243" FromRole="DATHANG" ToRole="TAIKHOAN" />
+    <NavigationProperty Name="THANHTOAN" Relationship="WEBNONGSANModel.FK__DATHANG__MATT__38996AB5" FromRole="DATHANG" ToRole="THANHTOAN" />
+    <NavigationProperty Name="VANCHUYEN" Relationship="WEBNONGSANModel.FK__DATHANG__MAVANCH__398D8EEE" FromRole="DATHANG" ToRole="VANCHUYEN" />
+    <NavigationProperty Name="VOUCHER" Relationship="WEBNONGSANModel.FK__DATHANG__MAVOUCH__3A81B327" FromRole="DATHANG" ToRole="VOUCHER" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="MAKH" />
+      <PropertyRef Name="DIACHICUTHE" />
+    </Key>
+    <Property Name="MAKH" Type="Int32" Nullable="false" />
+    <Property Name="NGAYSINH" Type="DateTime" Precision="0" />
+    <Property Name="GIOITINH" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHICUTHE" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IMAGES" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TAIKHOAN" Relationship="WEBNONGSANModel.FK__KHACHHANG__MAKH__3C69FB99" FromRole="KHACHHANG" ToRole="TAIKHOAN" />
+  </EntityType>
+  <Association Name="FK__SANPHAM__MALOAIS__3E52440B">
+    <End Type="WEBNONGSANModel.DANHMUCSANPHAM" Role="DANHMUCSANPHAM" Multiplicity="0..1" />
+    <End Type="WEBNONGSANModel.SANPHAM" Role="SANPHAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DANHMUCSANPHAM">
+        <PropertyRef Name="MALOAISP" />
+      </Principal>
+      <Dependent Role="SANPHAM">
+        <PropertyRef Name="MALOAISP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DATHANG__MAGH__35BCFE0A">
+    <End Type="WEBNONGSANModel.GIOHANG" Role="GIOHANG" Multiplicity="1" />
+    <End Type="WEBNONGSANModel.DATHANG" Role="DATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GIOHANG">
+        <PropertyRef Name="MAGH" />
+      </Principal>
+      <Dependent Role="DATHANG">
+        <PropertyRef Name="MAGH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GIOHANG__MA_SP__3B75D760">
+    <End Type="WEBNONGSANModel.SANPHAM" Role="SANPHAM" Multiplicity="0..1" />
+    <End Type="WEBNONGSANModel.GIOHANG" Role="GIOHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MA_SP" />
+      </Principal>
+      <Dependent Role="GIOHANG">
+        <PropertyRef Name="MA_SP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DATHANG__MANV__37A5467C">
+    <End Type="WEBNONGSANModel.NHANVIEN" Role="NHANVIEN" Multiplicity="1" />
+    <End Type="WEBNONGSANModel.DATHANG" Role="DATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="MANV" />
+      </Principal>
+      <Dependent Role="DATHANG">
+        <PropertyRef Name="MANV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__NHANVIEN__MA_SP__3D5E1FD2">
+    <End Type="WEBNONGSANModel.SANPHAM" Role="SANPHAM" Multiplicity="0..1" />
+    <End Type="WEBNONGSANModel.NHANVIEN" Role="NHANVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MA_SP" />
+      </Principal>
+      <Dependent Role="NHANVIEN">
+        <PropertyRef Name="MA_SP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DATHANG__MAKH__36B12243">
+    <End Type="WEBNONGSANModel.TAIKHOAN" Role="TAIKHOAN" Multiplicity="1" />
+    <End Type="WEBNONGSANModel.DATHANG" Role="DATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAIKHOAN">
+        <PropertyRef Name="MAKH" />
+      </Principal>
+      <Dependent Role="DATHANG">
+        <PropertyRef Name="MAKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__KHACHHANG__MAKH__3C69FB99">
+    <End Type="WEBNONGSANModel.TAIKHOAN" Role="TAIKHOAN" Multiplicity="1" />
+    <End Type="WEBNONGSANModel.KHACHHANG" Role="KHACHHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAIKHOAN">
+        <PropertyRef Name="MAKH" />
+      </Principal>
+      <Dependent Role="KHACHHANG">
+        <PropertyRef Name="MAKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DATHANG__MATT__38996AB5">
+    <End Type="WEBNONGSANModel.THANHTOAN" Role="THANHTOAN" Multiplicity="1" />
+    <End Type="WEBNONGSANModel.DATHANG" Role="DATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THANHTOAN">
+        <PropertyRef Name="MATT" />
+      </Principal>
+      <Dependent Role="DATHANG">
+        <PropertyRef Name="MATT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__THANHTOAN__MAVOU__3F466844">
+    <End Type="WEBNONGSANModel.VOUCHER" Role="VOUCHER" Multiplicity="0..1" />
+    <End Type="WEBNONGSANModel.THANHTOAN" Role="THANHTOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VOUCHER">
+        <PropertyRef Name="MAVOUCHER" />
+      </Principal>
+      <Dependent Role="THANHTOAN">
+        <PropertyRef Name="MAVOUCHER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DATHANG__MAVANCH__398D8EEE">
+    <End Type="WEBNONGSANModel.VANCHUYEN" Role="VANCHUYEN" Multiplicity="1" />
+    <End Type="WEBNONGSANModel.DATHANG" Role="DATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VANCHUYEN">
+        <PropertyRef Name="MAVANCHUYEN" />
+      </Principal>
+      <Dependent Role="DATHANG">
+        <PropertyRef Name="MAVANCHUYEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DATHANG__MAVOUCH__3A81B327">
+    <End Type="WEBNONGSANModel.VOUCHER" Role="VOUCHER" Multiplicity="0..1" />
+    <End Type="WEBNONGSANModel.DATHANG" Role="DATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VOUCHER">
+        <PropertyRef Name="MAVOUCHER" />
+      </Principal>
+      <Dependent Role="DATHANG">
+        <PropertyRef Name="MAVOUCHER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

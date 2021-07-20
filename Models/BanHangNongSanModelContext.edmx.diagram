@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="86249d2c22da4394922cae18fea4543c" Name="Diagram1">
+        <EntityTypeShape EntityType="WEBNONGSANModel.BANHKEO_DACSAN" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.DOUONG_NUOCEP" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.GIOHANG" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.LIENHE" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.LOAITAIKHOAN" Width="1.5" PointX="0.75" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.NHANVIEN" Width="1.5" PointX="3" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.RAU_CU_TRAICAY" Width="1.5" PointX="0.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.SUA_SANPHAMTUSUA" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.sysdiagram" Width="1.5" PointX="6.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.TAIKHOAN" Width="1.5" PointX="3" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.THANHTOAN" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.THIT_HAISAN_TRUNG" Width="1.5" PointX="0.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.VOUCHER" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.DATHANG" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEBNONGSANModel.KHACHHANG" Width="1.5" PointX="5.25" PointY="26.25" IsExpanded="true" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__GIOHANG__MA_BANH__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__GIOHANG__MA_DOUO__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__DATHANG__MAGH__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__GIOHANG__MA_RAU__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__GIOHANG__MA_THIT__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__TAIKHOAN__MALOAI__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__DATHANG__MANV__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__DATHANG__MAKH__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__KHACHHANG__MAKH__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__DATHANG__MATT__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__THANHTOAN__MAVOU__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="WEBNONGSANModel.FK__DATHANG__MAVOUCH__5812160E" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
