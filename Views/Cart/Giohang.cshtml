@@ -7,43 +7,49 @@
 
 
 <script type="text/javascript">
-    $(function () {
-        $("#removecart").click(function () {
-            var model = {};
-            //lấy id sản phẩm
-            model.Id = $("#productid").val();
+    $(document).ready(function () {
+        $(".removecart").click(function (e) {
+            e.preventDefault();
+
+            ////lấy id sản phẩm
+             var productid = $(this).attr("data-productid");
             $.ajax({
                 type: "POST",
                 url: '@Url.Action("Remove", "Cart")',
-                data:  JSON.stringify(model) ,
-                dataType: "json",
-                contentType: "application/json; charset=utf-8",
-                success: function () {
+                data: { Id: productid },
+                success: function (result) {
                     $('#CartCount').text(@Session["count"] - 1);
-                    $("#product-"+model.Id).remove();
+                    $("#product-" + productid).remove();
                 },
                 error: function () {
-                    alert("Lỗi trong khi xóa giỏ hàng!");
+                    alert(productid);
                 }
             });
             return false;
         });
     });
+
+
 </script>
+@{double tong = 0; } 
 <div style=" margin-top:150px">
     <div class="small-container">
 
         <form class="Giohang1">
             <div class="tieude">
                 <p>Giỏ hàng của bạn( <a id="slsanpham"></a> sản phẩm)</p>
+
             </div>
             <table class="row">
+
+
+
                 @if (Model != null)
                 {
                     foreach (var item in Model)
 
                     {
-                       
+                        <div >
                             <tr id="product-@item.sanpham.MA_SP">
                                 <td>
                                     <div class="col4">
@@ -76,25 +82,30 @@
                                     <div class="col4">
                                         <div class="row4">
                                             <p>Tổng tiền:</p>
-                                            <b><p id="giatien">  @(item.sanpham.GIABAN*item.Quantity)</p></b>
+                                            <b><p id="giatien">  @(item.sanpham.GIABAN * item.Quantity)</p></b>
+                                                @{ 
+                                                    tong = tong + ( Convert.ToDouble( item.sanpham.GIABAN * item.Quantity));
+
+                                                  }
                                             <div class="Row_con"></div>
                                             <div class="colcon_2">
                                                 <div class="iconxoa">
                                                     <img src="~/Content/imagesicons/Icon_Xoa.png">
+                                                    <input type="hidden" value="@item.sanpham.MA_SP" class="productid" />
                                                 </div>
                                             </div>
-                                            <input type="hidden" value="@item.sanpham.MA_SP" id="productid" />
+
                                             <div class="colcon_2">
-                                                <span><a href="#" id="removecart">Xóa</a></span>
+
+                                                <a href="" class="btn btn-light removecart" name="delete" data-productid="@item.sanpham.MA_SP">  Remove</a>@*<a href="" class="btn btn-light" id="removecart"> Remove</a>*@
                                             </div>
                                         </div>
                                     </div>
 
-                                </td>
+                                </td>       
+                            </tr>
+                        </div>
 
-                            
-
-                             </tr>
                         
                     }
                 }
@@ -113,7 +124,7 @@
 <div class="small-container">
     <div class="Giohang2">
         <div class="thanhtien">
-            <p>Thành tiền:   <p id="thanhtien"></p></p>
+            <p>Thành tiền:   <p id="thanhtien"> @tong</p></p>
             <br>
         </div>
         <div class="Row_3">
