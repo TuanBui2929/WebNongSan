@@ -20,6 +20,7 @@
                 success: function (result) {
                     $('#CartCount').text(@Session["count"] - 1);
                     $("#product-" + productid).remove();
+                    location.reload();
                 },
                 error: function () {
                     alert(productid);
@@ -27,6 +28,30 @@
             });
             return false;
         });
+        $(".updatecart").click(function (e) {
+            e.preventDefault();
+
+            ////lấy id sản phẩm
+            var productid = $(this).attr("data-updateid");
+            var quantity = $("#qtym-" + productid).val();
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("UpdateCart", "Cart")',
+                data: {
+                    productid: productid,
+                    quantity: quantity
+
+                },
+                success: function (result) {
+                    location.reload();
+                },
+                error: function () {
+                    alert(productid);
+                }
+            });
+            return false;
+        });
+
     });
 
 
@@ -34,22 +59,17 @@
 @{double tong = 0; } 
 <div style=" margin-top:150px">
     <div class="small-container">
-
         <form class="Giohang1">
             <div class="tieude">
                 <p>Giỏ hàng của bạn( <a id="slsanpham"></a> sản phẩm)</p>
-
             </div>
             <table class="row">
-
-
-
-                @if (Model != null)
-                {
-                    foreach (var item in Model)
-
+                <tbody>
+                    @if (Model != null)
                     {
-                        <div >
+                        foreach (var item in Model)
+                        {
+                            
                             <tr id="product-@item.sanpham.MA_SP">
                                 <td>
                                     <div class="col4">
@@ -65,7 +85,6 @@
                                             <b><p id="giatien">@item.sanpham.GIABAN</p>
                                         </div>
                                     </div>
-
                                 </td>
                                 <td>
                                     <div class="col4">
@@ -77,49 +96,42 @@
                                     </div>
 
                                 </td>
-                           
                                 <td>
                                     <div class="col4">
                                         <div class="row4">
                                             <p>Tổng tiền:</p>
                                             <b><p id="giatien">  @(item.sanpham.GIABAN * item.Quantity)</p></b>
-                                                @{ 
-                                                    tong = tong + ( Convert.ToDouble( item.sanpham.GIABAN * item.Quantity));
+                                            @{
+                                                tong = tong + (Convert.ToDouble(item.sanpham.GIABAN * item.Quantity));
 
-                                                  }
+                                            }
                                             <div class="Row_con"></div>
                                             <div class="colcon_2">
-                                                <div class="iconxoa">
-                                                    <img src="~/Content/imagesicons/Icon_Xoa.png">
-                                                    <input type="hidden" value="@item.sanpham.MA_SP" class="productid" />
-                                                </div>
+                                                <button href="" class="btn btn-light updatecart" data-updateid="@item.sanpham.MA_SP"> UpDate </button>
                                             </div>
-
                                             <div class="colcon_2">
-
-                                                <a href="" class="btn btn-light removecart" name="delete" data-productid="@item.sanpham.MA_SP">  Remove</a>@*<a href="" class="btn btn-light" id="removecart"> Remove</a>*@
+                                                <button href="" class="btn btn-light removecart" name="delete" data-productid="@item.sanpham.MA_SP">  Remove</button>@*<a href="" class="btn btn-light" id="removecart"> Remove</a>*@
                                             </div>
                                         </div>
                                     </div>
-
-                                </td>       
+                                </td>
                             </tr>
-                        </div>
-
-                        
+                           
+                        }
                     }
-                }
-                else
-                {
-                    <p> Giỏ hàng không có sản phẩm nào :v</p>
-                }
-
-            </table>
+                    else
+                    {
+                        <p> Giỏ hàng không có sản phẩm nào :v</p>
+                    }
 
 
+                </tbody>
 
-    </div>
-    </form>
+
+             </table>
+
+        </form>
+     </div>
 </div>
 <div class="small-container">
     <div class="Giohang2">
@@ -130,7 +142,7 @@
         <div class="Row_3">
             <div class="col_3">
                 <div class="tieptuc">
-                    <button style="margin-top: 20px;
+                    <button   style="margin-top: 20px;
                                 min-height: 30px;
                                 min-width: 200px;
                                 font-size: 18px ;
@@ -142,7 +154,8 @@
                                 background-size: 200%;
                                 transition: 0,5s;
                                 font-weight: bold;
-                                margin-right: 20px;">
+                                margin-right: 20px;"
+                            onclick="location.href='@Url.Action("home", "Home")'">
                         Tiếp tục mua hàng
                     </button>
                 </div>

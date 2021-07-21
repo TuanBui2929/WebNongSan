@@ -306,27 +306,24 @@ a{
    
 }
 
+.nameproduct {
+    height: 60px;
+}
     .col5 li {
-       
         margin-top: 20px;
         float: left;
         padding-left: 25px;
         width: 200px;
-        height: 244px;
+        height: 250px;
     }
-        .col5 li:hover {
+    .col5 li:hover {
          
-           transform: translateY(-25px);
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-        }
-    }
-    .col5 .nameproduct{
-        height:60px;
+        
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     }
 
 
-
-    .vegetable {
+.vegetable {
         background-color: #E5F2E4;
         height: 400px;
         padding: auto;
@@ -339,21 +336,8 @@ a{
 .vegetable h1{
   padding: 20px;
 }
-/*.vegetable ul{
-  list-style-type: none;*/ /* kiểu của các dòng trong danh sách là không có gì đầu dòng */
-  /*margin: 0;*/ /* thụt lề bằng 0 */
-  /*padding: 0;*/ /* vùng đệm để đẩy thành phần chứa bên trong thụt vô bằng 0 */
-  /*overflow: hidden; 
-  background-color: #E5F2E4;
-  font-size: 15px;
-  padding-left: 10px;
-}
-.vegetable ul li{
-  float: left;
- padding-left: 50px;
-  
-}*/
 
+/**/
 .Milk{
   background-color:#E5F2E4;
   height: 400px;
@@ -367,21 +351,7 @@ a{
 .Milk h1{
   padding: 20px;
 }
-/*.Milk ul{
-  list-style-type: none;*/ /* kiểu của các dòng trong danh sách là không có gì đầu dòng */
-  /*margin: 0;*/ /* thụt lề bằng 0 */
-  /*padding: 0;*/ /* vùng đệm để đẩy thành phần chứa bên trong thụt vô bằng 0 */
-  /*overflow: hidden; 
-  background-color: #E5F2E4;
-  font-size: 15px;
-  padding-left: 10px;
-}
-.Milk ul li{
-  float: left;
- padding-left: 20px;
-  
-}*/
-
+/**/
 .drink{
   background-color:#E5F2E4;
   height: 400px;
@@ -395,20 +365,7 @@ a{
 .drink h1{
   padding: 20px;
 }
-/*.drink ul{
-  list-style-type: none;*/ /* kiểu của các dòng trong danh sách là không có gì đầu dòng */
-  /*margin: 0;*/ /* thụt lề bằng 0 */
-  /*padding: 0;*/ /* vùng đệm để đẩy thành phần chứa bên trong thụt vô bằng 0 */
-  /*overflow: hidden; 
-  background-color: #E5F2E4;
-  font-size: 15px;
-  padding-left: 10px;
-}
-.drink ul li{
-  float: left;
- padding-left: 20px;
-  
-}*/
+/**/
 
 .candy{
   background-color:#E5F2E4;
@@ -423,20 +380,7 @@ a{
 .candy h1{
   padding: 20px;
 }
-/*.candy ul{
-  list-style-type: none;*/ /* kiểu của các dòng trong danh sách là không có gì đầu dòng */
-  /*margin: 0;*/ /* thụt lề bằng 0 */
-  /*padding: 0;*/ /* vùng đệm để đẩy thành phần chứa bên trong thụt vô bằng 0 */
-  /*overflow: hidden; 
-  background-color: #E5F2E4;
-  font-size: 15px;
-  padding-left: 10px;
-}
-.candy ul li{
-  float: left;
- padding-left: 20px;
-  
-}*/
+
 /*-----------------------------------------------------------------------------  phan trang*/
 
 
@@ -725,7 +669,7 @@ a{
 }
 
 .colcon_2 {
-    margin-top: 70px;
+    margin-top: 10px;
     flex-basis: 50%;
     padding: 0px;
     transition: transform 0.6s;

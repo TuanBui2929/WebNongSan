@@ -5,6 +5,37 @@
     ViewBag.Title = "Sua";
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+        $(function () {
+            $(".shopcart").click(function () {
+                var model = {};
+                //lấy id sản phẩm
+                model.Id = $(this).attr("data-productid");
+                // lấy số lượng đặt hàng
+                model.Quantity = 1;
+                $.ajax({
+                    type: "POST",
+                     url: '@Url.Action("Themgiohang", "Cart")',
+                    data: {
+                        Id: model.Id,
+                        Quantity: model.Quantity
+
+                    },
+                    success: function (result) {
+                        alert("Thêm giỏ hàng thành công!")
+                        $('#CartCount').text(@*@Session["count"]*@ result.couter);
+
+                    },
+                    error: function () {
+                        alert("Lỗi trong khi thêm vào giỏ hàng!");
+                    }
+                });
+                return false;
+            });
+        });
+</script>
 <div style=" margin-top:150px">
 
     <div class="content">
@@ -22,7 +53,7 @@
                         <div class="nameproduct"> <p>@item.TEN_SP</p> </div>
 
                         <b class="price">@item.GIABAN</b><br>
-                        <a class="shopcart" href="#">Thêm vào giở hàng</a>
+                        <a class="shopcart" data-productid="@item.MA_SP" href="#">Thêm vào giở hàng</a>
                     </li>
                 }
             </div>

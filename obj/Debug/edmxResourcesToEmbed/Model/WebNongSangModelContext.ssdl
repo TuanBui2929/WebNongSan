@@ -77,15 +77,25 @@ warning 6002: The table/view 'WEBNONGSAN1.dbo.KHACHHANG' does not have a primary
     </Key>
     <Property Name="MA_SP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TEN_SP" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="GIABAN" Type="money" Nullable="false" />
-    <Property Name="GIAGOC" Type="money" />
+    <Property Name="GIABAN" Type="float" />
+    <Property Name="GIAGOC" Type="float" />
     <Property Name="VANCHUYEN" Type="nvarchar" MaxLength="200" />
     <Property Name="THONGTINSP" Type="nvarchar" MaxLength="4000" />
     <Property Name="THUONGHIEU" Type="nvarchar" MaxLength="200" />
-    <Property Name="GIAMGIA" Type="int" />
+    <Property Name="GIAMGIA" Type="float" />
     <Property Name="SOLUONG" Type="int" />
     <Property Name="IMAGES" Type="nvarchar" MaxLength="255" />
     <Property Name="MALOAISP" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="TAIKHOAN">
     <Key>
@@ -266,6 +276,7 @@ warning 6002: The table/view 'WEBNONGSAN1.dbo.KHACHHANG' does not have a primary
     <EntitySet Name="LIENHE" EntityType="Self.LIENHE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="THANHTOAN" EntityType="Self.THANHTOAN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VANCHUYEN" EntityType="Self.VANCHUYEN" Schema="dbo" store:Type="Tables" />

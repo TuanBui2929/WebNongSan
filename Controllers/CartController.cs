@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -44,7 +45,9 @@ namespace WebNongSan.Controllers
                 }
                 Session["cart"] = cart;
             }
-            return Json(new { Message = "Thành công", JsonRequestBehavior.AllowGet });
+
+            ViewBag.soluong = Session["count"];
+            return Json(new { Message = "Thành công",couter = Session["count"], JsonRequestBehavior.AllowGet });
         }
 
         private int isExist(int id)
@@ -65,5 +68,19 @@ namespace WebNongSan.Controllers
             Session["count"] = Convert.ToInt32(Session["count"]) - 1;
             return Json(new { Message = "Thành công", JsonRequestBehavior.AllowGet });
         }
+
+        public ActionResult UpdateCart( int productid,int quantity)
+        {
+            // Cập nhật Cart thay đổi số lượng quantity ...
+            List<CartModel> cart = (List<CartModel>)Session["cart"];
+            if (cart.Any(p => p.sanpham.MA_SP == productid))
+            {
+                cart.First(p => p.sanpham.MA_SP == productid).Quantity = quantity;              
+            }
+            Session["cart"] = cart;
+            return Json(new { Message = "Thành công", JsonRequestBehavior.AllowGet });
+        }
     }
+     
+    
 }

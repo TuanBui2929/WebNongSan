@@ -167,6 +167,9 @@
     <Compile Include="Model\SANPHAM.cs">
       <DependentUpon>WebNongSangModelContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\sysdiagram.cs">
+      <DependentUpon>WebNongSangModelContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\TAIKHOAN.cs">
       <DependentUpon>WebNongSangModelContext.tt</DependentUpon>
     </Compile>

@@ -5,29 +5,28 @@
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 
 }
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script type="text/javascript">
         $(function () {
-            $("#addtocard").click(function () {-->
-                @*var model = {};
+            $(".shopcart").click(function () {
+                var model = {};
                 //lấy id sản phẩm
-                model.Id = @Model.MA_SP;
+                model.Id = $(this).attr("data-productid");
                 // lấy số lượng đặt hàng
                 model.Quantity = 1;
-                debugger;*@
-                <!--$.ajax({
+                $.ajax({
                     type: "POST",
-                     url: '@Url.Action("Themgiohang","Cart")',
-                    data:  /*JSON.stringify(model)*/{
-                        Id: $(this).data("#id"),
-                        Quantity: 1
+                     url: '@Url.Action("Themgiohang", "Cart")',
+                    data: {
+                        Id: model.Id,
+                        Quantity: model.Quantity
+
                     },
-                    dataType: "json",
-                    contentType: "application/json; charset=utf-8",
-                    success: function () {
+                    success: function (result) {
                         alert("Thêm giỏ hàng thành công!")
-                        $('#CartCount').text(@Session["count"] + 1);
+                        $('#CartCount').text(@*@Session["count"]*@ result.couter);
+
                     },
                     error: function () {
                         alert("Lỗi trong khi thêm vào giỏ hàng!");
@@ -36,7 +35,7 @@
                 return false;
             });
         });
-</script>-->
+</script>
 <div class="banner">
     <div class="slideshow-container">
         <div class="mySlides fade">
@@ -116,15 +115,17 @@
                 @for (int i = 0; i < 5; i++)
                 {
                     var thit = Model.Where(m => m.DANHMUCSANPHAM.TENDANHMUC.Equals("THIT_HAISAN_TRUNG")).ToArray();
-                    <li>
-                        <a href="@Url.Action("detail","Home",new { Id = thit[i].MA_SP})">
-                            <img src="@thit[i].IMAGES" width="140px" height="115px">
-                        </a>
-                        <div class="nameproduct"> <p>@thit[i].TEN_SP</p> </div>
-                        <b class="price">@thit[i].GIABAN</b><br>
+                <li>
+                    <a href="@Url.Action("detail","Home",new { Id = thit[i].MA_SP})">
+                        <img src="@thit[i].IMAGES" width="140px" height="115px">
+                    </a>
+                    <div class="nameproduct"> <p>@thit[i].TEN_SP</p> </div>
+                    <b class="price">@thit[i].GIABAN</b><br>
 
+                    <a class="shopcart" data-productid="@thit[i].MA_SP" href="#">Thêm vào giở hàng</a>
 
-                    </li>
+                </li>
+                  
 
 
                 }
@@ -140,16 +141,17 @@
                 {
                     var thit = Model.Where(m => m.DANHMUCSANPHAM.TENDANHMUC.Equals("RAU_CU_TRAICAY")).ToArray();
 
-                    <li>
-                        <a href="@Url.Action("detail","Home",new { Id = thit[i].MA_SP})">
-                            <img src="@thit[i].IMAGES" width="140px" height="115px">
-                        </a>
-                        <div class="nameproduct"> <p>@thit[i].TEN_SP</p> </div>
-                        <b class="price">@thit[i].GIABAN</b><br>
+                <li>
+                    <a href="@Url.Action("detail","Home",new { Id = thit[i].MA_SP})">
+                        <img src="@thit[i].IMAGES" width="140px" height="115px">
+                    </a>
+                    <div class="nameproduct"> <p>@thit[i].TEN_SP</p> </div>
+                    <b class="price">@thit[i].GIABAN</b><br>
+                   <a class="shopcart" data-productid="@thit[i].MA_SP" href="#">Thêm vào giở hàng</a>
 
 
 
-                    </li>
+                </li>
 
                 }
             </div>
@@ -164,16 +166,17 @@
                 {
                     var thit = Model.Where(m => m.DANHMUCSANPHAM.TENDANHMUC.Equals("SUA_SANPHAMTUSUA")).ToArray();
 
-                    <li>
-                        <a href="@Url.Action("detail","Home",new { Id = thit[i].MA_SP})">
-                            <img src="@thit[i].IMAGES" width="140px" height="115px">
-                        </a>
-                        <div class="nameproduct"> <p>@thit[i].TEN_SP</p> </div>
-                        <b class="price">@thit[i].GIABAN</b><br>
+                <li>
+                    <a href="@Url.Action("detail","Home",new { Id = thit[i].MA_SP})">
+                        <img src="@thit[i].IMAGES" width="140px" height="115px">
+                    </a>
+                    <div class="nameproduct"> <p>@thit[i].TEN_SP</p> </div>
+                    <b class="price">@thit[i].GIABAN</b><br>
+                    <a class="shopcart" data-productid="@thit[i].MA_SP" href="#">Thêm vào giở hàng</a>
 
-                    
 
-                    </li>
+
+                </li>
 
                 }
             </div>
@@ -195,8 +198,9 @@
                     </a>
                     <div class="nameproduct"> <p>@thit[i].TEN_SP</p> </div>
                     <b class="price">@thit[i].GIABAN</b><br>
+                    <a class="shopcart" data-productid="@thit[i].MA_SP" href="#">Thêm vào giở hàng</a>
 
-                    
+
 
                 </li>
 
@@ -219,10 +223,7 @@
                     </a>
                     <div class="nameproduct"> <p>@thit[i].TEN_SP</p> </div>
                     <b class="price">@thit[i].GIABAN</b><br>
-
-                  
-                   
-
+                     <a class="shopcart" data-productid="@thit[i].MA_SP" href="#">Thêm vào giở hàng</a>
                 </li>
 
                 }

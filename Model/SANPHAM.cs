@@ -23,12 +23,12 @@ namespace WebNongSan.Model
     
         public int MA_SP { get; set; }
         public string TEN_SP { get; set; }
-        public decimal GIABAN { get; set; }
-        public Nullable<decimal> GIAGOC { get; set; }
+        public Nullable<double> GIABAN { get; set; }
+        public Nullable<double> GIAGOC { get; set; }
         public string VANCHUYEN { get; set; }
         public string THONGTINSP { get; set; }
         public string THUONGHIEU { get; set; }
-        public Nullable<int> GIAMGIA { get; set; }
+        public Nullable<double> GIAMGIA { get; set; }
         public Nullable<int> SOLUONG { get; set; }
         public string IMAGES { get; set; }
         public Nullable<int> MALOAISP { get; set; }

@@ -30,11 +30,12 @@ namespace WebNongSan.Model
         public virtual DbSet<GIOHANG> GIOHANGs { get; set; }
         public virtual DbSet<LIENHE> LIENHEs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
-        public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
         public virtual DbSet<THANHTOAN> THANHTOANs { get; set; }
         public virtual DbSet<VANCHUYEN> VANCHUYENs { get; set; }
         public virtual DbSet<VOUCHER> VOUCHERs { get; set; }
         public virtual DbSet<DATHANG> DATHANGs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
     }
 }
