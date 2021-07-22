@@ -21,6 +21,7 @@ namespace WebNongSan.Model
             this.KHACHHANGs = new HashSet<KHACHHANG>();
         }
     
+     
         public int MAKH { get; set; }
         public string TENKH { get; set; }
         public string EMAIL { get; set; }

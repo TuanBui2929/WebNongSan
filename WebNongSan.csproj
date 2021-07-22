@@ -138,6 +138,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminSANPHAMsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminUserController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\DetailsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -408,6 +410,13 @@
       <DependentUpon>WebNongSangModelContext.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminSANPHAMs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminSANPHAMs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminSANPHAMs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminSANPHAMs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminSANPHAMs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminUser\DangNhap.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\dangnhap.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -449,9 +458,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Content\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Admin\Views\Manager\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

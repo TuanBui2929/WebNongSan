@@ -1,0 +1,70 @@
+﻿@model IEnumerable<WebNongSan.Model.SANPHAM>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TEN_SP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GIABAN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.THONGTINSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.THUONGHIEU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SOLUONG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IMAGES)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DANHMUCSANPHAM.TENDANHMUC)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TEN_SP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GIABAN)
+        </td>
+        <td>
+            @Html.TextAreaFor(modelItem => item.THONGTINSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.THUONGHIEU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SOLUONG)
+        </td>
+        <td>
+            <img src="@Html.DisplayFor(modelItem => item.IMAGES)" width="70" height="50"/> 
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DANHMUCSANPHAM.TENDANHMUC)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MA_SP }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MA_SP }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MA_SP })
+        </td>
+    </tr>
+}
+
+</table>

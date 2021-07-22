@@ -194,8 +194,7 @@ a{
     /*2 dong cuoi giữa cho menu trượt lên xuống giữ nguyên vị trí*/
     overflow: hidden;
     position: fixed;
-  }
-  
+  } 
   .dropdown-content a {
     float: none;
     color: black;
@@ -203,16 +202,13 @@ a{
     text-decoration: none;
     display: block;
     text-align: left;
-  }
-  
+  } 
 .dropdown-content a:hover {
     color: #fff;
     text-align: center;
     background: radial-gradient(circle, #B5D33B 25%, #659F42 100%, #89B440,  #4D9142);; border-radius: 10px 40px;
 }
-
 .Menudropdown:hover .dropdown-content {display: block;}
-
 .Menudropdown:hover .dropbtn {background-color: #497745;}
   /*nut show ra tu ben text.js cho show*/
   .show {display: block;}
@@ -316,11 +312,10 @@ a{
         width: 200px;
         height: 250px;
     }
-    .col5 li:hover {
+        .col5 li:hover {
          
-        
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-    }
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        }
 
 
 .vegetable {

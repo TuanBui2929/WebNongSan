@@ -1,0 +1,60 @@
+﻿@model  WebNongSan.Model.TAIKHOAN
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@Styles.Render("~/Content/dangnhap.css")
+@Scripts.Render("~/Scripts/js/dangnhap.js")
+<div style=" margin-top:150px">
+    <div class="form-login">
+        @using (Html.BeginForm())
+        {
+
+            <h2>Login with Social Media or Manually</h2>
+            <div class="col-2">
+                @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @name = "username", @placeholder = "Nhập Email" } })
+
+
+                <br />
+                @Html.EditorFor(model => model.MK, new { htmlAttributes = new { @type = "password", @name = "password", @placeholder = "Nhập Mật Khẩu" } })
+                <br />
+                <span class="text-danger">
+                    @Html.DisplayFor(model => model.DangNhapThatBai)
+                </span>
+
+
+            </div>
+
+
+            <div class="col-3">
+                <input type="submit" value="Login">
+            </div>
+
+            <div class="vl">
+                <span class="vl-innertext">or</span>
+            </div>
+
+            <div class="col">
+                <div class="hide-md-lg">
+                    <p>Or sign in manually:</p>
+                </div>
+            </div>
+            <div class="col-1">
+                <a href="#" class="fb btn">
+                    <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+                </a>
+                <br>
+                <a href="#" class="google btn">
+                    <i class="fa fa-google fa-fw">
+                    </i> Login with Google+
+                </a>
+            </div>
+
+            <div class="bottom-login">
+                <a href="@Url.Action("DangKi","User")" class="btn-1">Sign up</a> <!--dang ký ở đây-->
+                <a style="color:rgb(0, 0, 0)">Or</a>
+                <a href="#" class="btn-2">Forgot password?</a>
+            </div>
+        }
+    </div>
+</div>
