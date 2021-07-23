@@ -149,55 +149,58 @@
     </Compile>
     <Compile Include="Model\CartModel.cs" />
     <Compile Include="Model\DANHMUCSANPHAM.cs">
-      <DependentUpon>WebNongSangModelContext.tt</DependentUpon>
+      <DependentUpon>WEBNONGSAN1Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\DATHANG.cs">
-      <DependentUpon>WebNongSangModelContext.tt</DependentUpon>
+      <DependentUpon>WEBNONGSAN1Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\GIOHANG.cs">
-      <DependentUpon>WebNongSangModelContext.tt</DependentUpon>
+      <DependentUpon>WEBNONGSAN1Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\KHACHHANG.cs">
-      <DependentUpon>WebNongSangModelContext.tt</DependentUpon>
+      <DependentUpon>WEBNONGSAN1Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\LIENHE.cs">
-      <DependentUpon>WebNongSangModelContext.tt</DependentUpon>
+      <DependentUpon>WEBNONGSAN1Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\NHANVIEN.cs">
-      <DependentUpon>WebNongSangModelContext.tt</DependentUpon>
+      <DependentUpon>WEBNONGSAN1Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\SANPHAM.cs">
-      <DependentUpon>WebNongSangModelContext.tt</DependentUpon>
+      <DependentUpon>WEBNONGSAN1Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sysdiagram.cs">
-      <DependentUpon>WebNongSangModelContext.tt</DependentUpon>
+      <DependentUpon>WEBNONGSAN1Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\TAIKHOAN.cs">
-      <DependentUpon>WebNongSangModelContext.tt</DependentUpon>
+      <DependentUpon>WEBNONGSAN1Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\THANHTOAN.cs">
-      <DependentUpon>WebNongSangModelContext.tt</DependentUpon>
+      <DependentUpon>WEBNONGSAN1Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TKAdmin.cs">
+      <DependentUpon>WEBNONGSAN1Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\VANCHUYEN.cs">
-      <DependentUpon>WebNongSangModelContext.tt</DependentUpon>
+      <DependentUpon>WEBNONGSAN1Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\VOUCHER.cs">
-      <DependentUpon>WebNongSangModelContext.tt</DependentUpon>
+      <DependentUpon>WEBNONGSAN1Entities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\WebNongSangModelContext.Context.cs">
+    <Compile Include="Model\WEBNONGSAN1Entities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>WebNongSangModelContext.Context.tt</DependentUpon>
+      <DependentUpon>WEBNONGSAN1Entities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\WebNongSangModelContext.cs">
+    <Compile Include="Model\WEBNONGSAN1Entities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>WebNongSangModelContext.tt</DependentUpon>
+      <DependentUpon>WEBNONGSAN1Entities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\WebNongSangModelContext.Designer.cs">
+    <Compile Include="Model\WEBNONGSAN1Entities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>WebNongSangModelContext.edmx</DependentUpon>
+      <DependentUpon>WEBNONGSAN1Entities.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -390,25 +393,18 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Model\WebNongSangModelContext.Context.tt">
+    <Content Include="Model\WEBNONGSAN1Entities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>WebNongSangModelContext.edmx</DependentUpon>
-      <LastGenOutput>WebNongSangModelContext.Context.cs</LastGenOutput>
+      <DependentUpon>WEBNONGSAN1Entities.edmx</DependentUpon>
+      <LastGenOutput>WEBNONGSAN1Entities.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\WebNongSangModelContext.tt">
+    <Content Include="Model\WEBNONGSAN1Entities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>WebNongSangModelContext.edmx</DependentUpon>
-      <LastGenOutput>WebNongSangModelContext.cs</LastGenOutput>
+      <DependentUpon>WEBNONGSAN1Entities.edmx</DependentUpon>
+      <LastGenOutput>WEBNONGSAN1Entities.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Model\WebNongSangModelContext.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>WebNongSangModelContext.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Model\WebNongSangModelContext.edmx.diagram">
-      <DependentUpon>WebNongSangModelContext.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\AdminSANPHAMs\Create.cshtml" />
@@ -417,6 +413,14 @@
     <Content Include="Areas\Admin\Views\AdminSANPHAMs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\AdminSANPHAMs\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AdminUser\DangNhap.cshtml" />
+    <EntityDeploy Include="Model\WEBNONGSAN1Entities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WEBNONGSAN1Entities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model\WEBNONGSAN1Entities.edmx.diagram">
+      <DependentUpon>WEBNONGSAN1Entities.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\Views\AdminUser\DangKi.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\dangnhap.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -460,7 +464,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Content\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\Manager\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

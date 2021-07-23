@@ -22,11 +22,12 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     @if (Session["iUser"] != null)
-                    {                     
+                    {
                         <li>@Html.ActionLink("Create", "Create", "AdminSANPHAMs")</li>
-                   
+                        <li>@Html.ActionLink("Đăng Ký Admin", "Dangki", "AdminUser")</li>
 
                     }
+
 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">

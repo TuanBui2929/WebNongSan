@@ -1,17 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="WEBNONGSANModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="Admin">
-    <Key>
-      <PropertyRef Name="MAadmin" />
-    </Key>
-    <Property Name="MAadmin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TENadmin" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="EMAIL" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="SDT" Type="int" Nullable="false" />
-    <Property Name="MK" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="XACNHANMATKHAU" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="MAXACTHUC" Type="varchar" MaxLength="20" />
-  </EntityType>
+<Schema Namespace="WEBNONGSAN1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="DANHMUCSANPHAM">
     <Key>
       <PropertyRef Name="MALOAISP" />
@@ -134,6 +122,18 @@ warning 6002: The table/view 'WEBNONGSAN1.dbo.KHACHHANG' does not have a primary
     <Property Name="NOIDUNGGC" Type="nvarchar" MaxLength="500" />
     <Property Name="NOIDUNGGH" Type="nvarchar" MaxLength="200" />
     <Property Name="MAVOUCHER" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="TKAdmin">
+    <Key>
+      <PropertyRef Name="MAadmin" />
+    </Key>
+    <Property Name="MAadmin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TENadmin" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="SDT" Type="int" Nullable="false" />
+    <Property Name="MK" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="XACNHANMATKHAU" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MAXACTHUC" Type="varchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="VANCHUYEN">
     <Key>
@@ -282,8 +282,7 @@ warning 6002: The table/view 'WEBNONGSAN1.dbo.KHACHHANG' does not have a primary
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="WEBNONGSANModelStoreContainer">
-    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+  <EntityContainer Name="WEBNONGSAN1ModelStoreContainer">
     <EntitySet Name="DANHMUCSANPHAM" EntityType="Self.DANHMUCSANPHAM" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GIOHANG" EntityType="Self.GIOHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LIENHE" EntityType="Self.LIENHE" Schema="dbo" store:Type="Tables" />
@@ -292,6 +291,7 @@ warning 6002: The table/view 'WEBNONGSAN1.dbo.KHACHHANG' does not have a primary
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="THANHTOAN" EntityType="Self.THANHTOAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TKAdmin" EntityType="Self.TKAdmin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VANCHUYEN" EntityType="Self.VANCHUYEN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VOUCHER" EntityType="Self.VOUCHER" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DATHANG" EntityType="Self.DATHANG" store:Type="Tables" store:Schema="dbo">

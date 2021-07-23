@@ -71,6 +71,7 @@
       <End Role="SANPHAM" EntitySet="SANPHAMs" />
       <End Role="NHANVIEN" EntitySet="NHANVIENs" />
     </AssociationSet>
+    <EntitySet Name="Admins" EntityType="WEBNONGSANModel.Admin" />
   </EntityContainer>
   <EntityType Name="DANHMUCSANPHAM">
     <Key>
@@ -346,4 +347,16 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="MAadmin" />
+    </Key>
+    <Property Name="MAadmin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENadmin" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SDT" Type="Int32" Nullable="false" />
+    <Property Name="MK" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="XACNHANMATKHAU" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAXACTHUC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

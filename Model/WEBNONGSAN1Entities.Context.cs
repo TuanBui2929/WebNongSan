@@ -13,10 +13,10 @@ namespace WebNongSan.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WEBNONGSANEntities1 : DbContext
+    public partial class WEBNONGSAN1Entities : DbContext
     {
-        public WEBNONGSANEntities1()
-            : base("name=WEBNONGSANEntities1")
+        public WEBNONGSAN1Entities()
+            : base("name=WEBNONGSAN1Entities")
         {
         }
     
@@ -25,17 +25,18 @@ namespace WebNongSan.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<TAIKHOAN> TAIKHOANs { get; set; }
         public virtual DbSet<DANHMUCSANPHAM> DANHMUCSANPHAMs { get; set; }
         public virtual DbSet<GIOHANG> GIOHANGs { get; set; }
         public virtual DbSet<LIENHE> LIENHEs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
+        public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<TAIKHOAN> TAIKHOANs { get; set; }
         public virtual DbSet<THANHTOAN> THANHTOANs { get; set; }
+        public virtual DbSet<TKAdmin> TKAdmins { get; set; }
         public virtual DbSet<VANCHUYEN> VANCHUYENs { get; set; }
         public virtual DbSet<VOUCHER> VOUCHERs { get; set; }
         public virtual DbSet<DATHANG> DATHANGs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
     }
 }

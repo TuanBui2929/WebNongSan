@@ -9,14 +9,15 @@ namespace WebNongSan.Areas.Admin.Controllers
 {
     public class AdminUserController : Controller
     {
-        WEBNONGSANEntities1 db = new WEBNONGSANEntities1();
+        WEBNONGSAN1Entities db = new WEBNONGSAN1Entities();
         // GET: User
 
         public ActionResult DangNhap()
         {
-           
+          
             return View();
         }
+      
         public ActionResult DangXuat()
         {
             Session.Abandon();
@@ -24,9 +25,9 @@ namespace WebNongSan.Areas.Admin.Controllers
             // return View();
         }
         [HttpPost]
-        public ActionResult DangNhap(TAIKHOAN user)
+        public ActionResult DangNhap(TKAdmin user)
         {
-            var check = db.TAIKHOANs.FirstOrDefault(m => m.EMAIL.Equals(user.EMAIL) && m.MK.Equals(user.MK));
+            var check = db.TKAdmins.FirstOrDefault(m => m.EMAIL.Equals(user.EMAIL) && m.MK.Equals(user.MK));
             if (check == null)
             {
                 user.DangNhapThatBai = "Nhap Sai Mat Khau Hoac Email";
@@ -35,7 +36,7 @@ namespace WebNongSan.Areas.Admin.Controllers
             else
             {
                 Session["iUser"] = "Đăng Xuất";
-                Session["Ten"] = check.TENKH;
+                Session["Ten"] = check.TENadmin;
                 return RedirectToAction("Index","AdminSANPHAMs");
             }
 
@@ -49,15 +50,15 @@ namespace WebNongSan.Areas.Admin.Controllers
 
 
         [HttpPost]
-        public ActionResult DangKi(TAIKHOAN user)
+        public ActionResult DangKi(TKAdmin user)
         {
             if (ModelState.IsValid)
             {
-                var check = db.TAIKHOANs.FirstOrDefault(s => s.EMAIL == user.EMAIL);
+                var check = db.TKAdmins.FirstOrDefault(s => s.EMAIL == user.EMAIL);
                 if (check == null)
                 {
                     db.Configuration.ValidateOnSaveEnabled = false;
-                    db.TAIKHOANs.Add(user);
+                    db.TKAdmins.Add(user);
                     db.SaveChanges();
                     return RedirectToAction("DangNhap");
                 }
@@ -71,6 +72,7 @@ namespace WebNongSan.Areas.Admin.Controllers
 
 
         }
+     
 
     }
 }

@@ -72,7 +72,6 @@ D:\SourceCodeWeb\WebNongSan\bin\System.Web.WebPages.Razor.xml
 D:\SourceCodeWeb\WebNongSan\bin\Newtonsoft.Json.xml
 D:\SourceCodeWeb\WebNongSan\bin\Antlr3.Runtime.pdb
 D:\SourceCodeWeb\WebNongSan\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\SourceCodeWeb\WebNongSan\obj\Debug\WebNongSan.csproj.AssemblyReference.cache
 D:\SourceCodeWeb\WebNongSan\obj\Debug\WebNongSan.csproj.CoreCompileInputs.cache
 D:\SourceCodeWeb\WebNongSan\obj\Debug\WebNongSan.csproj.CopyComplete
 D:\SourceCodeWeb\WebNongSan\obj\Debug\WebNongSan.dll
@@ -87,3 +86,4 @@ D:\SourceCodeWeb\WebNongSan\bin\PagedList.dll
 D:\SourceCodeWeb\WebNongSan\bin\PagedList.Mvc.dll
 D:\SourceCodeWeb\WebNongSan\bin\PagedList.xml
 D:\SourceCodeWeb\WebNongSan\bin\PagedList.Mvc.xml
+D:\SourceCodeWeb\WebNongSan\obj\Debug\WebNongSan.csproj.AssemblyReference.cache

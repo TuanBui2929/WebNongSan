@@ -10,7 +10,7 @@ namespace WebNongSan.Controllers
 {
     public class UserController : Controller
     {
-        WEBNONGSANEntities1 db = new WEBNONGSANEntities1();
+        WEBNONGSAN1Entities db = new WEBNONGSAN1Entities();
         // GET: User
        
         public ActionResult DangNhap()
@@ -73,6 +73,8 @@ namespace WebNongSan.Controllers
 
                      
         }
+        ///
+      
 
 
 

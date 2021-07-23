@@ -10,7 +10,7 @@ namespace WebNongSan.Controllers
 {
     public class DetailsController : Controller
     {
-        WEBNONGSANEntities1 db = new WEBNONGSANEntities1();
+        WEBNONGSAN1Entities db = new WEBNONGSAN1Entities();
         // GET: Details
         public ActionResult Index()
         {

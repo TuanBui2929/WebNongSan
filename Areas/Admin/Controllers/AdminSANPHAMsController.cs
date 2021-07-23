@@ -13,7 +13,7 @@ namespace WebNongSan.Areas.Admin.Controllers
     
     public class AdminSANPHAMsController : Controller
     {
-        private WEBNONGSANEntities1 db = new WEBNONGSANEntities1();
+        private WEBNONGSAN1Entities db = new WEBNONGSAN1Entities();
 
         // GET: Admin/AdminSANPHAMs
         public ActionResult Index()

@@ -142,5 +142,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="WEBNONGSANModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="MAXACTHUC" ColumnName="MAXACTHUC" />
+          <ScalarProperty Name="XACNHANMATKHAU" ColumnName="XACNHANMATKHAU" />
+          <ScalarProperty Name="MK" ColumnName="MK" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="TENadmin" ColumnName="TENadmin" />
+          <ScalarProperty Name="MAadmin" ColumnName="MAadmin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

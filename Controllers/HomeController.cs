@@ -9,7 +9,7 @@ namespace WebNongSan.Controllers
 {
     public class HomeController : Controller
     {
-        WEBNONGSANEntities1 db = new WEBNONGSANEntities1();
+        WEBNONGSAN1Entities db = new WEBNONGSAN1Entities();
         public ActionResult Index()
         {
             return View();

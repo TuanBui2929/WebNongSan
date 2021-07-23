@@ -21,7 +21,6 @@ namespace WebNongSan.Model
             this.KHACHHANGs = new HashSet<KHACHHANG>();
         }
     
-     
         public int MAKH { get; set; }
         public string TENKH { get; set; }
         public string EMAIL { get; set; }
@@ -29,6 +28,7 @@ namespace WebNongSan.Model
         public string MK { get; set; }
         public string XACNHANMATKHAU { get; set; }
         public string MAXACTHUC { get; set; }
+
         public string DangNhapThatBai;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
