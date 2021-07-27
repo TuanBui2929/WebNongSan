@@ -45,8 +45,6 @@ namespace WebNongSan.Controllers
                 }
                 Session["cart"] = cart;
             }
-
-            ViewBag.soluong = Session["count"];
             return Json(new { Message = "Thành công",couter = Session["count"], JsonRequestBehavior.AllowGet });
         }
 

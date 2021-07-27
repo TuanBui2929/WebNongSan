@@ -44,26 +44,33 @@
 
         <div class="vegetable">
             <h1 style="text-align:center"> Danh Sách Tìm Kiếm </h1>
+            @if (Model.Count != 0)
+            {
+                <div class="col5">
+                    @foreach (var item in Model)
+                    {
 
-            <div class="col5">
-                @foreach (var item in Model)
-                {
+                        <li>
+                            <img src="@item.IMAGES" width="140px" height="115px">
+                            <div class="nameproduct"> <p>@item.TEN_SP</p> </div>
 
-                    <li>
-                        <img src="@item.IMAGES" width="140px" height="115px">
-                        <div class="nameproduct"> <p>@item.TEN_SP</p> </div>
+                            <b class="price">@item.GIABAN</b><br>
+                            <a class="shopcart" data-productid="@item.MA_SP" href="#">Thêm vào giở hàng</a>
+                        </li>
+                    }
+                </div>
+                <div style="margin-top: 20px">
+                    Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber) of @Model.PageCount
+                    @Html.PagedListPager(Model, page => Url.Action("search",
+                   new { page, currentFilter = ViewBag.CurrentFilter }
+                   ))
+                </div>
+            }
+            else
+            {
+                <p> Chúc bạn may mắn lần sau :v </p>
+            }
 
-                        <b class="price">@item.GIABAN</b><br>
-                        <a class="shopcart" data-productid="@item.MA_SP" href="#">Thêm vào giở hàng</a>
-                    </li>
-                }
-            </div>
-            <div style="margin-top: 20px">
-                Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber) of @Model.PageCount
-                @Html.PagedListPager(Model, page => Url.Action("search",
-               new { page, currentFilter = ViewBag.CurrentFilter }
-               ))
-            </div>
 
         </div>
 
